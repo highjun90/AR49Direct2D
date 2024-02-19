@@ -20,11 +20,7 @@
 
 #include "CImGuiMgr.h"
 
-//test git 연동
-
-int a = 0;
-int b = 0;
-int c = 0;
+//test git 연동2
 
 HINSTANCE   hInst;
 HWND        hWnd;
