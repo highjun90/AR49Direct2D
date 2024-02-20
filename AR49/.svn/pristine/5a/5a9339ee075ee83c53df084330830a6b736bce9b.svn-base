@@ -179,7 +179,7 @@ void CLevelMgr::init()
 	m_CurLevel = pNewLevel;
 
 	// 레벨 플레이
-	m_CurLevel->begin();	
+	m_CurLevel->begin();
 }
 
 void CLevelMgr::tick()
