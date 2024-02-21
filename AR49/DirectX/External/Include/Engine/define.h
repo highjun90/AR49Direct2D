@@ -12,12 +12,20 @@
 #define DT	CTimeMgr::GetInst()->GetDeltaTime()
 #define DTd	CTimeMgr::GetInst()->GetDeltaTime_d()
 
+#define DT_ENGINE	CTimeMgr::GetInst()->GetEngineDeltaTime()
+#define DTd_ENGINE	CTimeMgr::GetInst()->GetEngineDeltaTime_d()
+
+
 #define KEY_TAP(Key) KEY_CHECK(Key, TAP)
 #define KEY_PRESSED(Key) KEY_CHECK(Key, PRESSED)
 #define KEY_RELEASED(Key) KEY_CHECK(Key, RELEASED)
 #define KEY_NONE(Key) KEY_CHECK(Key, NONE)
 
 #define LAYER_MAX 32
+
+#define CLONE(TYPE) virtual TYPE* Clone() { return new TYPE(*this); }
+#define CLONE_DISABLE(TYPE) TYPE* Clone() { return nullptr; assert(nullptr); }\
+							TYPE(const TYPE& _OriginBuffer) = delete;
 
 enum class DIR_TYPE
 {
@@ -38,6 +46,9 @@ enum class ASSET_TYPE
 	GRAPHICS_SHADER,
 	END,
 };
+
+extern const char* ASSET_TYPE_STRING[(UINT)ASSET_TYPE::END];
+
 
 enum class COMPONENT_TYPE
 {
@@ -207,5 +218,16 @@ enum class PARTICLE_MODULE
 	NOISE_FORCE,
 	CALCULATE_FORCE,// 주어진 힘을 계산하는 모듈
 
+	RENDER,			// 렌더링 때의 옵션 관련
+
 	END,
+};
+
+
+enum class LEVEL_STATE
+{
+	PLAY,
+	PAUSE,
+	STOP,
+	NONE,
 };
