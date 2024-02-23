@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CBackgroundScript.h"
 
-#include "CKeyMgr.h"
+#include <Engine/CKeyMgr.h>
 
 CBackgroundScript::CBackgroundScript()
 {
@@ -10,7 +10,6 @@ CBackgroundScript::CBackgroundScript()
 CBackgroundScript::~CBackgroundScript()
 {
 }
-
 
 void CBackgroundScript::tick()
 {

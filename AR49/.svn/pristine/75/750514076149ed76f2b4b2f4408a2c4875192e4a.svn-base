@@ -1,12 +1,13 @@
 #include "pch.h"
 #include "CPlayerScript.h"
-#include "CAssetMgr.h"
+#include <Engine/CAssetMgr.h>
 
+#include <Engine/CGameObject.h>
 #include "CMissileScript.h"
-#include "CGameObject.h"
 
-#include "CMaterial.h"
-#include "CRenderComponent.h"
+#include <Engine/CMaterial.h>
+#include <Engine/CRenderComponent.h>
+
 
 CPlayerScript::CPlayerScript()
 	: m_Speed(500.f)
